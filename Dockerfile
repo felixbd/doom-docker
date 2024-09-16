@@ -23,9 +23,9 @@ ENV PATH="/home/emacsuser/.config/emacs/bin:${PATH}"
 
 
 # update the doom config files
-RUN mkdir -p /home/emacsuser/.config/doom/old-configs \
-    cd /home/emacsuser/.config/doom/ \
-    mv *.el ./old-configs/ \
+RUN mkdir -p /home/emacsuser/.config/doom/old-configs && \
+    cd /home/emacsuser/.config/doom/ && \
+    mv *.el ./old-configs/ && \
     cd -
 
 COPY ./doom-snapshot/*.el /home/emacsuser/.config/doom/
