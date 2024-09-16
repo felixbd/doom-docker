@@ -19,7 +19,7 @@ RUN useradd -ms /bin/bash emacsuser && \
     echo "emacsuser ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
 # Switch to the non-root user and set up Doom Emacs
-USER emacsuser
+# USER emacsuser
 WORKDIR /home/emacsuser
 
 # Install Doom Emacs
