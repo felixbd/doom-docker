@@ -6,14 +6,20 @@ name: Docker
 # documentation.
 
 on:
-  # schedule:
-  #  - cron: '27 23 * * *'
   push:
     branches: [ "master" ]
+    # Trigger the workflow only if Dockerfile or files in doom-snapshot directory are modified
+    paths:
+      - 'Dockerfile'
+      - 'doom-snapshot/**'
     # Publish semver tags as releases.
     tags: [ 'v*.*.*' ]
   pull_request:
     branches: [ "master" ]
+    # Trigger the workflow only if Dockerfile or files in doom-snapshot directory are modified
+    paths:
+      - 'Dockerfile'
+      - 'doom-snapshot/**'
 
 env:
   # Use docker.io for Docker Hub if empty
