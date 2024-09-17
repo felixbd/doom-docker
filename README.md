@@ -18,7 +18,7 @@ my configured doom (gnu/emacs) in docker
 ## pull
 
 ```sh=
-docker pull ghcr.io/felixbd/doom-docker:latest
+docker pull ghcr.io/felixbd/doom-docker:master
 ```
 
 ## run
@@ -26,8 +26,12 @@ docker pull ghcr.io/felixbd/doom-docker:latest
 ```sh=
 sudo docker run --rm -it -u $(id -u):$(id -g) \
     -v "`pwd`":/app --workdir /app \
-    ghcr.io/felixbd/doom-docker:latest
+    ghcr.io/felixbd/doom-docker:master
 ```
+
+> TODO:
+> To provide a description, add the following line to your Dockerfile:
+> `LABEL org.opencontainers.image.description DESCRIPTION`
 
 </br>
 </br>
@@ -40,6 +44,6 @@ sudo docker run --rm -it -u $(id -u):$(id -g) \
 
 make db
 make dr
-# emacs
-doom run &
+emacs
+# or use `doom run`
 ```
