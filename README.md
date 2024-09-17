@@ -12,8 +12,8 @@ my configured doom (gnu/emacs) in docker
 >
 > `#!/usr/bin/env doomscript` https://github.com/doomemacs/doomemacs/issues/6494
 >
-> -> https://github.com/felixbd/org-presi
-> -> https://github.com/felixbd/thesis-template-in-org-mode
+> - https://github.com/felixbd/org-presi
+> - https://github.com/felixbd/thesis-template-in-org-mode
 
 ## pull
 
