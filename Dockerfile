@@ -9,8 +9,9 @@ ENV DEBIAN_FRONTEND=noninteractive
 ENV PATH="/home/emacsuser/.config/emacs/bin:${PATH}"
 
 # Install dependencies
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    apt-utils emacs git curl sudo gcc ripgrep fd-find \
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends apt-utils ca-certificates && \
+    apt-get install -y --no-install-recommends emacs git curl sudo gcc ripgrep fd-find \
     libgccjit0 libgccjit-12-dev && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
@@ -19,7 +20,7 @@ RUN useradd -ms /bin/bash emacsuser && \
     echo "emacsuser ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
 # Switch to the non-root user and set up Doom Emacs
-# USER emacsuser
+USER emacsuser
 WORKDIR /home/emacsuser
 
 # Install Doom Emacs
