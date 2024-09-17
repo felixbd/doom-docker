@@ -27,7 +27,9 @@ WORKDIR /home/emacsuser
 RUN git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.config/emacs && \
     ~/.config/emacs/bin/doom install --env -! && \
     mkdir -p ~/.config/emacs/doom/old-config && \
-    mv ~/.config/emacs/doom/*.el ~/.config/emacs/doom/old-config/
+    find ~/.config/emacs/doom/ -maxdepth 1 -name '*.el' -exec mv {} ~/.config/emacs/doom/old-config/ \;
+
+# mv ~/.config/emacs/doom/*.el ~/.config/emacs/doom/old-config/
 
 # Copy Doom Emacs config files and update
 COPY ./doom-snapshot/*.el /home/emacsuser/.config/doom/
