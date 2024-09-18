@@ -29,10 +29,6 @@ sudo docker run --rm -it -u $(id -u):$(id -g) \
     ghcr.io/felixbd/doom-docker:master
 ```
 
-> TODO:
-> To provide a description, add the following line to your Dockerfile:
-> `LABEL org.opencontainers.image.description DESCRIPTION`
-
 </br>
 </br>
 

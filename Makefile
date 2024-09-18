@@ -1,4 +1,10 @@
 
+run:
+	sudo docker run --rm -it -u $(id -u):$(id -g) \
+	  -v "`pwd`":/app --workdir /app \
+	  ghcr.io/felixbd/doom-docker:master
+
+
 build:
 	sh doom-config-snapshot.sh
 
